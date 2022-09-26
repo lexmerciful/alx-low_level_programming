@@ -9,25 +9,12 @@
 void print_diagsums(int *a, int size)
 {
 int i;
-int bdiagsum = 0;
-int fdiagsum = 0;
-int prev = 0;
-for (i = 0; i < size * size; i++)
-{
-if (i == 0)
-{
-bdiagsum += *(a + i);
-prev = i;
-}
-else if (i == (prev + size + 1))
-{
-bdiagsum += *(a + i);
-prev = i;
-}
-}
+int diagO = 0;
+int diagT = 0;
 for (i = 0; i < size; i++)
 {
-fdiagsum += *(a + (size * (i + 1) - (i + 1)));
+diagO += a[(i * size) + i];
+diagT += a[(size - 1) + ((size - 1) * i)];
 }
-printf("%d, %d\n", bdiagsum, fdiagsum);
+printf("%d, %d\n", diagO, diagT);
 }
