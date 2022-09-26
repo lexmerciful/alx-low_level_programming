@@ -8,13 +8,18 @@
  */
 void print_diagsums(int *a, int size)
 {
-int i;
-int diagO = 0;
-int diagT = 0;
-for (i = 0; i < size; i++)
+int diagonal_sum_1 = 0;
+int diagonal_sum_2 = 0;
+int row, i;
+for (row = 0; row < size; row++)
 {
-diagO += a[(i * size) + i];
-diagT += a[(size - 1) + ((size - 1) * i)];
+i = (row * size) + row;
+diagonal_sum_1 += a[i];
 }
-printf("%d, %d\n", diagO, diagT);
+for (row = 1; row <= size; row++)
+{
+i = (row * size) - row;
+diagonal_sum_2 += a[i];
+}
+printf("%d, %d\n", diagonal_sum_1, diagonal_sum_2);
 }
