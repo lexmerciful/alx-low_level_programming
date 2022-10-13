@@ -48,7 +48,7 @@ return (a / b);
  * @a: first integer
  * @b: second integer
  *
- * Return: remainder of a divided  
+*Return: remainder of a divided
  */
 int op_mod(int a, int b)
 {
